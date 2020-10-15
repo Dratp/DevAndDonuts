@@ -1,1 +1,8 @@
 <p>donut-list works!</p>
+
+<div *ngFor="let d of donutList.results">
+    <a>{{d.id}}: {{d.name}}</a>
+    <div>
+        <app-donut-view [theDonut]="d.ref"></app-donut-view>
+    </div>
+</div>

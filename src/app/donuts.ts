@@ -1,6 +1,6 @@
 export interface DonutList{
     count: number;
-    results: Donuts;
+    results: Donuts[];
 }
 
 export interface Donuts {

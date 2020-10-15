@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DonutService {
 
-  apiURL = 'www.https://grandcircusco.github.io/demo-apis/';
+  apiURL = 'https://grandcircusco.github.io/demo-apis/';
 
   constructor(private http:HttpClient) { }
 

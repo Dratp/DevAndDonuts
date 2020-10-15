@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DonutList, Donut } from '../donuts';
+import { DonutService } from '../services/donut.service';
 
 @Component({
   selector: 'app-donut-list',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonutListComponent implements OnInit {
 
-  constructor() { }
+  donutList: DonutList;
+
+  constructor(private route: ActivatedRoute, private donutService: DonutService) { }
 
   ngOnInit(): void {
+    this.donutService.getDonutList().subscribe(
+      (data: DonutList) =>
+      this.donutList = data
+    );
   }
 
 }
