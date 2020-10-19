@@ -1,1 +1,6 @@
-<p>developers works!</p>
+<div *ngFor="let dc of devList.complete">
+    <app-developer-view [theDev]="dc" ></app-developer-view>
+</div>
+<div *ngFor="let dc of devList.tiny">
+    <app-developer-view [theDev]="dc" ></app-developer-view>
+</div>

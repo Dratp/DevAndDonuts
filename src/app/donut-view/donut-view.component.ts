@@ -12,6 +12,8 @@ export class DonutViewComponent implements OnInit {
   @Input() theDonut:string
   donut: Donut;
 
+  isHidden = true;
+
   constructor(private donutService: DonutService) { }
 
   ngOnInit(): void {
@@ -20,5 +22,21 @@ export class DonutViewComponent implements OnInit {
       this.donut = data
     )
   };
+
+  HideAndSeek(){
+    this.isHidden = !this.isHidden;
+  }
+
+  IsHidden(){
+    if(this.isHidden == true){
+      return {Hidden: true};
+    }
+      else{
+        return {Hidden: false};
+      }
+  }
+
+      
+
 
 }

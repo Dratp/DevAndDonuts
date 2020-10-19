@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Devs } from '../devs';
+import { DevService } from '../services/dev.service';
 
 @Component({
   selector: 'app-developers',
@@ -8,9 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DevelopersComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  devList: Devs;
+
+  constructor(private route: ActivatedRoute, private devService: DevService) { }
 
   ngOnInit(): void {
+    this.devService.getDevs().subscribe(
+      (data: Devs) =>
+      this.devList = data
+    );
   }
 
 }

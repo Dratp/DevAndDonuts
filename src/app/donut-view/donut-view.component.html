@@ -1,9 +1,12 @@
 <div>
-    <img src="{{donut.photo}}" width="200"> <br />
-Name: {{donut.name}} <br />
-Calories: {{donut.calories}} <br />
-Extras:
-<ul *ngFor="let e of donut.extras">
-    <li>{{e}}</li>
-</ul>
+    <button (click)="HideAndSeek()">Details</button>
+    <div [ngClass]="IsHidden()">
+        <img src="{{donut.photo}}" width="200"> <br />
+        Name: {{donut.name}} <br />
+        Calories: {{donut.calories}} <br />
+        Extras:
+    <ul *ngFor="let e of donut.extras">
+        <li>{{e}}</li>
+    </ul>
+    </div>
 </div>

@@ -1,1 +1,11 @@
-<p>developer-view works!</p>
+<div style="border-style: double;"> 
+    <div>
+    {{theDev.name}}
+    {{theDev.firstName}} {{theDev.lastName}}
+</div>
+    <button (click)="HideAndSeek()">Details</button>
+    <div [ngClass]="IsHidden()">
+        Year: {{theDev.year}} <br />
+        Contribution: {{theDev.innovation}} <br />
+    </div>
+</div>
